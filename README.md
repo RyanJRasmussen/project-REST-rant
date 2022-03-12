@@ -16,3 +16,10 @@ To-Do list of paths to add and their purposes, along with the method that will b
 | POST  | /places/:id/rant  | Create a rant (comment) about a particular place |
 | DELETE  | /places/:id/rant/:rantId  | Delete a rant (comment) about a particular place |
 | GET  | * | 	404 page (matches any route not defined above) |
+
+
+
+Table of restaurant data to obtain and make visible
+| NAME | CITY | STATE | CUISINES | PHOTOGRAPH |
+| ------------- | ------------- | ------- | ------------ | ------- |
+|  |  |  |  |  |
