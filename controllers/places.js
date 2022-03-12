@@ -20,6 +20,12 @@ router.get('/', (req, res) => {
 res.render('places/index', { places })
 })
 
+//GET new place
+router.get('/new', (req, res) => {
+    res.render('places/new')
+})
+
+
 module.exports = router
 
 // Photo by <a href="https://unsplash.com/@amseaman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Seaman</a> on <a href="https://unsplash.com/s/photos/thai-restaurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
