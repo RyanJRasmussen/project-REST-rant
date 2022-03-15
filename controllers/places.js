@@ -5,6 +5,16 @@ router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else {
+        res.render('places/show', {place: [id]})
+    }
+})
+
 router.post('/', (req, res) => {
     console.log(req.body)
     if (!req.body.pic) {
