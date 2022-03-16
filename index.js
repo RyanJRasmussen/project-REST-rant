@@ -1,6 +1,7 @@
 // Modules and Globals
 require('dotenv').config()
 const express = require('express')
+const methodOverride = require('method-override')
 const app = express()
 
 // Express Settings
@@ -12,6 +13,7 @@ app.use(express.static('public'))
 // Controllers & Routes
 app.use(express.urlencoded({ extended: true }))
 app.use('/places', require('./controllers/places'))
+app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
     res.render('home')
