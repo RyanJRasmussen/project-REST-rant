@@ -16,6 +16,7 @@ function home () {
                     <button className="btn-primary">Places Page</button>
                 </a>
             </main>
+            <div className='footer'>Author: Ryan Rasmussen</div>
         </Def>
     )
 }

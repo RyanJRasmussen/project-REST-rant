@@ -30,6 +30,7 @@ function new_form () {
                 <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
             </main>
+            <div className='footer'>Author: Ryan Rasmussen</div>
         </Def>
     )
 }
