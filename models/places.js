@@ -8,8 +8,8 @@ const placeSchema = new mongoose.Schema({
     founded: Number
 })
 
+placeSchema.methods.showEstablished = function(){
+    return `${this.name} has been serving ${this.city} since ${this.founded}.`
+}
+
 module.exports = mongoose.model('Place', placeSchema)
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-})
