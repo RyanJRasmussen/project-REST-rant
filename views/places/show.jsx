@@ -8,10 +8,6 @@ function show (data) {
             No comments yet!
         </h3>
     )
-    // data.place.comments.map(comment => {console.log(comment)})
-    // if(data.place.comments.length){
-    //     console.log(comments)
-    // }
     if (data.place.comments.length) {
         comments = data.place.comments.map((comment) => {
         return (
@@ -25,6 +21,28 @@ function show (data) {
             </div>
         )
         })
+    }
+
+    let rating = (
+        <h3 className="inactive">
+            Not yet rated
+        </h3>
+    )
+
+    if(data.place.comments.length){
+        let sumRatings = data.place.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+        let averageRating = Math.round(sumRatings/data.place.comments.length)
+        let stars = ''
+        for (let i = 0; i < averageRating; i++) {
+            stars += "⭐️"
+        }
+        rating = (
+            <h3>
+                <span role="img" aria-label="star">{stars}</span> stars
+            </h3>
+        )
     }
 
     return (
@@ -50,14 +68,11 @@ function show (data) {
                         Delete
                     </button>
                 </form>
-
-
                 <hr></hr>
-                <div id='rating'>Ratings</div>
-                <hr></hr>
+                {rating}
                 <div className="h3">Comments</div>
                 <div className = "text-muted">{comments}</div>
-Add a comment!
+                Add a comment!
                 <form method="POST" action={`/places/${data.place.id}/comment`}>
                     <div className="form-group">
                         <label htmlFor="author">Your name</label>
